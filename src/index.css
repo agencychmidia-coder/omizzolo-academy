@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   INSTITUTO OMIZZOLO ACADEMY — Design Tokens
+   Paleta: Ouro/Dourado + Bordô + Preto/Creme
+   Heading: Playfair Display | Body: Raleway
+   ========================================================= */
+
+@layer base {
+  :root {
+    /* Gold */
+    --gold: 40 45% 60%;
+    --gold-light: 40 50% 75%;
+    --gold-dark: 40 40% 45%;
+
+    /* Burgundy */
+    --burgundy: 0 40% 35%;
+    --burgundy-dark: 0 45% 25%;
+    --burgundy-light: 0 35% 45%;
+
+    /* Neutrals */
+    --dark: 0 0% 8%;
+    --dark-soft: 0 0% 12%;
+    --cream: 40 30% 97%;
+    --cream-dark: 40 20% 92%;
+
+    /* Semantic mapping (shadcn-compatible) */
+    --background: var(--cream);
+    --foreground: var(--dark);
+
+    --primary: var(--gold-dark);
+    --primary-foreground: var(--cream);
+
+    --secondary: var(--burgundy);
+    --secondary-foreground: var(--cream);
+
+    --muted: var(--cream-dark);
+    --muted-foreground: 0 0% 35%;
+
+    --accent: var(--gold);
+    --accent-foreground: var(--dark);
+
+    --border: 40 20% 85%;
+    --ring: var(--gold-dark);
+
+    --radius: 0.375rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--cream));
+    color: hsl(var(--dark));
+    font-family: "Raleway", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  /* Visible keyboard focus everywhere — accessibility floor */
+  :focus-visible {
+    outline: 2px solid hsl(var(--gold-dark));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-10 lg:px-16 py-20 md:py-28;
+  }
+
+  .section-dark {
+    background-color: hsl(var(--dark));
+    color: hsl(var(--cream));
+  }
+
+  .section-cream {
+    background-color: hsl(var(--cream));
+    color: hsl(var(--dark));
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 100%
+    );
+  }
+
+  .gold-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold-light)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-8 py-4
+      font-semibold tracking-wide text-[hsl(var(--dark))]
+      transition-all duration-300 ease-out;
+    background: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold-dark)));
+    box-shadow: 0 4px 20px hsla(40, 45%, 45%, 0.35);
+  }
+  .btn-gold:hover {
+    box-shadow: 0 6px 28px hsla(40, 45%, 45%, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-burgundy {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-8 py-4
+      font-semibold tracking-wide text-[hsl(var(--cream))]
+      transition-all duration-300 ease-out;
+    background: linear-gradient(135deg, hsl(var(--burgundy)), hsl(var(--burgundy-dark)));
+  }
+  .btn-burgundy:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-outline-cream {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-8 py-4
+      font-semibold tracking-wide border-2 border-[hsl(var(--cream))]
+      text-[hsl(var(--cream))] transition-all duration-300 ease-out;
+  }
+  .btn-outline-cream:hover {
+    background: hsl(var(--cream) / 0.1);
+  }
+
+  /* Divisor "articulação" — motivo de assinatura: uma linha com um pivô,
+     remetendo à articulação temporomandibular sendo o centro do projeto */
+  .divider-joint {
+    @apply relative flex items-center justify-center my-10 select-none;
+    height: 1px;
+  }
+  .divider-joint::before,
+  .divider-joint::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold-dark) / 0.6));
+  }
+  .divider-joint::after {
+    background: linear-gradient(90deg, hsl(var(--gold-dark) / 0.6), transparent);
+  }
+  .divider-joint-dot {
+    @apply mx-3 h-2.5 w-2.5 rounded-full;
+    background: hsl(var(--gold));
+    box-shadow: 0 0 0 4px hsl(var(--gold) / 0.15);
+  }
+
+  .eyebrow {
+    @apply text-xs md:text-sm font-semibold uppercase tracking-[0.2em];
+    color: hsl(var(--gold-dark));
+  }
+
+  .eyebrow-on-dark {
+    @apply text-xs md:text-sm font-semibold uppercase tracking-[0.2em];
+    color: hsl(var(--gold-light));
+  }
+}
