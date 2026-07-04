@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/fellowship", "destination": "/" },
+    { "source": "/fellowship/(.*)", "destination": "/$1" }
+  ]
+}
