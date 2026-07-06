@@ -7,7 +7,7 @@ const SHEET_URL =
 
 // Envia para Google Sheets via Apps Script Web App.
 // Instruções de configuração estão no comentário abaixo do componente.
-const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL ?? "";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3jJ7PRI1_EImnM6xNwvyD5gHLtz6SFL4NwH9UxAzFNkSswTn5035Qhr9CL-YoHoY7Qg/exec";
 
 type FormData = {
   nome: string;
