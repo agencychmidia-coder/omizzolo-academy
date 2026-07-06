@@ -44,6 +44,10 @@ async function sendToSheets(data: FormData) {
       nivelConhecimento: data.nivelConhecimento,
       comoConheceu: data.comoConheceu,
     });
+    // GET via img tag (sem CORS)
+    const img = new Image();
+    img.src = `${APPS_SCRIPT_URL}?${params.toString()}`;
+    // fetch backup
     await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
       method: "GET",
       mode: "no-cors",
