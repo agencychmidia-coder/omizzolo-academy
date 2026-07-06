@@ -34,7 +34,6 @@ async function sendToSheets(data: FormData) {
   try {
     const params = new URLSearchParams({
       programa: "Fellowship em Artroscopia da ATM",
-      timestamp: new Date().toISOString(),
       nome: data.nome,
       email: data.email,
       telefone: data.telefone,
@@ -44,13 +43,13 @@ async function sendToSheets(data: FormData) {
       nivelConhecimento: data.nivelConhecimento,
       comoConheceu: data.comoConheceu,
     });
-    // GET via img tag (sem CORS)
-    const img = new Image();
-    img.src = `${APPS_SCRIPT_URL}?${params.toString()}`;
-    // fetch backup
-    await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
-      method: "GET",
-      mode: "no-cors",
+    const url = `${APPS_SCRIPT_URL}?${params.toString()}`;
+    // Img tag ignora CORS completamente
+    await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = img.onerror = resolve;
+      img.src = url;
+      setTimeout(resolve, 3000);
     });
   } catch {
     // falha silenciosa
