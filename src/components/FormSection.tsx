@@ -7,7 +7,7 @@ const SHEET_URL =
 
 // Envia para Google Sheets via Apps Script Web App.
 // Instruções de configuração estão no comentário abaixo do componente.
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3jJ7PRI1_EImnM6xNwvyD5gHLtz6SFL4NwH9UxAzFNkSswTn5035Qhr9CL-YoHoY7Qg/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbypbQ1pyKofxmRohcxdm1Yvh0nxbda1q6dP1rPJ57E3eP4552hOZHRqQeQIDd4symkR/exec";
 
 type FormData = {
   nome: string;
