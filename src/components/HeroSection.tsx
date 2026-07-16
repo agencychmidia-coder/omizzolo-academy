@@ -62,7 +62,7 @@ export default function HeroSection() {
             </div>
 
             <p className="mt-5 text-sm text-[hsl(var(--cream)/0.6)]">
-              Turmas reduzidas · 6 a 8 vagas por edição
+              Turmas reduzidas · 2 a 3 vagas por edição
             </p>
           </div>
 

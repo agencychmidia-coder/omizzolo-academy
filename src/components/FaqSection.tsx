@@ -15,7 +15,7 @@ const faqs = [
   {
     question: "Como funciona a seleção para as turmas?",
     answer:
-      "As vagas são limitadas a 6–8 alunos por edição do Fellowship, para garantir prática real e acompanhamento de qualidade. Após o envio do formulário, nossa equipe entra em contato para confirmar disponibilidade e próximos passos.",
+      "As vagas são limitadas a 2–3 alunos por turma, para garantir prática real e acompanhamento de qualidade. Após o envio do formulário, nossa equipe entra em contato para confirmar disponibilidade e próximos passos.",
   },
   {
     question: "Recebo certificado de conclusão?",

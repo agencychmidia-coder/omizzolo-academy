@@ -5,7 +5,7 @@ const points = [
   "Módulos online com conteúdo teórico e científico",
   "Prática guiada com retorno direto do Dr. Omizzolo",
   "Atuação real em centro cirúrgico",
-  "Turmas de 6 a 8 alunos para acompanhamento individualizado",
+  "Turmas de 2 a 3 alunos para acompanhamento individualizado",
 ];
 
 export default function AboutSection() {
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 <h3 className="font-display text-lg font-semibold">Vagas Limitadas</h3>
               </div>
               <p className="text-sm text-[hsl(var(--dark)/0.7)] leading-relaxed">
-                Turmas de <strong>6 a 8 alunos</strong> por edição, garantindo
+                Turmas de <strong>2 a 3 alunos</strong> por edição, garantindo
                 acompanhamento próximo e prática real em centro cirúrgico para
                 cada participante.
               </p>

@@ -44,7 +44,7 @@ export default function StickyCtaBar() {
     >
       <div className="section-dark border-t border-[hsl(var(--gold)/0.3)] px-5 py-3.5 flex items-center justify-between gap-4 max-w-7xl mx-auto sm:rounded-t-lg sm:mb-0">
         <p className="text-sm text-[hsl(var(--cream)/0.85)] hidden sm:block">
-          Vagas limitadas — Fellowship (6–8) e Mentorship (2 por turma)
+          Vagas limitadas — 2 a 3 alunos por turma
         </p>
         <p className="text-sm text-[hsl(var(--cream)/0.85)] sm:hidden">
           Vagas limitadas
