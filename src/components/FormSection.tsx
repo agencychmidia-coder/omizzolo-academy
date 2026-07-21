@@ -96,6 +96,11 @@ export default function FormSection() {
     }
     setError(null);
     await sendToSheets(data);
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead", {
+        content_name: "Fellowship em Artroscopia da ATM",
+      });
+    }
     setSubmitted(true);
     setTimeout(() => { window.location.href = WA_URL; }, 3000);
   };
